@@ -1,41 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/upButton" android:layout_gravity="center"
-            android:src="@android:drawable/arrow_up_float"/>
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/downButton" android:layout_gravity="center"
-            android:src="@android:drawable/arrow_down_float"/>
+              android:layout_height="fill_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New EditText"
-        android:id="@+id/message"
-        android:layout_gravity="center"/>
+    <!--First row of buttons-->
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/fullScreenButton"
+        android:text="@string/full_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
-        android:layout_gravity="center"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
 
     <Button
-        android:id="@+id/killServerButton"
+        android:id="@+id/powerButton"
+        android:text="@string/power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kill Server"
-        android:layout_gravity="center"
-        />
-</LinearLayout>
+        android:layout_toLeftOf="@id/fullScreenButton"/>
+
+    <Button
+        android:id="@+id/aspectRatioButton"
+        android:text="@string/aspect_ratio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fullScreenButton"/>
+
+    <!--Second row of buttons-->
+
+    <Button
+        android:id="@+id/playPauseButton"
+        android:text="@string/play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullScreenButton"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/nextButton"
+        android:text="@string/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullScreenButton"
+        android:layout_toLeftOf="@id/playPauseButton"/>
+
+    <Button
+        android:id="@+id/volumeUpButton"
+        android:text="@string/volume_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullScreenButton"
+        android:layout_toRightOf="@id/playPauseButton"/>
+
+    <!--Third row of buttons-->
+
+    <Button
+        android:id="@+id/stopButton"
+        android:text="@string/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playPauseButton"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/previousButton"
+        android:text="@string/previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playPauseButton"
+        android:layout_toLeftOf="@id/stopButton"/>
+
+    <Button
+        android:id="@+id/volumeDownButton"
+        android:text="@string/volume_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playPauseButton"
+        android:layout_toRightOf="@id/stopButton"/>
+
+    <!--Fourth row of buttons-->
+
+    <Button
+        android:id="@+id/fastForwardButton"
+        android:text="@string/fast_forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopButton"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/rewindButton"
+        android:text="@string/rewind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopButton"
+        android:layout_toLeftOf="@id/fastForwardButton"/>
+
+    <Button
+        android:id="@+id/muteButton"
+        android:text="@string/mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopButton"
+        android:layout_toRightOf="@id/fastForwardButton"/>
+
+
+</RelativeLayout>
 

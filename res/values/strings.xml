@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PcController</string>
+
+    <string name="power">PWR</string>
+    <string name="full_screen">Full</string>
+    <string name="aspect_ratio">A/R</string>
+    <string name="next">Next</string>
+    <string name="previous">Prev</string>
+    <string name="play_pause">Play</string>
+    <string name="volume_up">VolUp</string>
+    <string name="volume_down">VolDwn</string>
+    <string name="stop">Stop</string>
+    <string name="rewind">REW</string>
+    <string name="fast_forward">FFW</string>
+    <string name="mute">Mute</string>
 </resources>

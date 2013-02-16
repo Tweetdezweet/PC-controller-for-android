@@ -20,6 +20,9 @@ import java.net.Socket;
  */
 public class ConnectionHandler extends Handler {
     public static final String MESSAGE_DATA = "be.zweetinc.PcController.Message_Data";
+    public static final int CONNECTION = 0;
+    public static final int CONNECT = 0;
+    public static final int DISCONNECT = -1;
 
     private Socket client;
     private PrintWriter printwriter;
@@ -33,38 +36,23 @@ public class ConnectionHandler extends Handler {
     public void handleMessage(Message msg) {
         super.handleMessage(msg);    //To change body of overridden methods use File | Settings | File Templates.
         message = msg;
-        if(message.what != MessageCode.CLASS_CONNECTION){
+        if(message.what != CONNECTION){
             sendMessageToServer();
         } else {
             handleConnection();
         }
     }
     private void handleConnection(){
-        if(message.arg1 == MessageCode.CONNECTION_CONNECT) {
+        if(message.arg1 == CONNECT) {
             makeConnection();
-        } else {
+        } else if(message.arg1 == DISCONNECT) {
             closeConnection();
         }
     }
 
     private void sendMessageToServer(){
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("eventClass", message.what);
-            jsonObject.put("eventAction", message.arg1);
-            jsonObject.put("eventActionType", message.arg2);
-            jsonObject.put("eventText", message.getData().getString(MESSAGE_DATA));
-        } catch (JSONException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-
-
-
-        printwriter.println(jsonObject.toString());
-
-        Log.d("ConnectionInfo", "printwriter error: " + printwriter.checkError());
-
-//        printwriter.write(jsonObject.toString()+"\n");
+        String msg = message.getData().getString(MESSAGE_DATA);
+        printwriter.println(msg);
     }
 
     protected void quit(){

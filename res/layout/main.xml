@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/upButton" android:layout_gravity="center"
+            android:src="@android:drawable/arrow_up_float"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/downButton" android:layout_gravity="center"
+            android:src="@android:drawable/arrow_down_float"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New EditText"
+        android:id="@+id/message"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/killServerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kill Server"
+        android:layout_gravity="center"
+        />
+</LinearLayout>
+

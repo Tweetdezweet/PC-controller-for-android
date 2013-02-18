@@ -61,7 +61,7 @@ public class ConnectionHandler extends Handler {
 
     private void makeConnection(){
         try {
-            client = new Socket("192.168.1.195", 4444);
+            client = new Socket("192.168.0.119", 4444);
             Log.d("ConnectionInfo", client.toString());
             printwriter = new PrintWriter(client.getOutputStream(), true);
         } catch (IOException e) {
